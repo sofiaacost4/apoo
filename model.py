@@ -3,9 +3,10 @@ from typing import Optional
 
 @dataclass
 class Item:
+    nome: str
+    quantidade: int
+    descricao: str
     id: Optional[int] = None
-    desc: str
-    quant: Optional[int] = None
                 
 
 
