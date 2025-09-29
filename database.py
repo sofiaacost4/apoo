@@ -56,8 +56,7 @@ class ItemDAO:
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         nome TEXT NOT NULL,
         descricao TEXT NOT NULL,
-        quantidade INTEGER,
-        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        quantidade INTEGER
     )
     """)
 
