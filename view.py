@@ -3,7 +3,7 @@ import streamlit as st
 from controller import ItemController
 
 st.set_page_config(page_title="APOO", layout="centered")
-st.title("📝 Projeto e implementação de software")
+st.title("📝 Listagem de Itens")
 
 st.header("Adicionar novo item")
 with st.form(key="new_item_form", clear_on_submit=True):
