@@ -5,21 +5,16 @@ from model import Item
 
 
 class ItemDAO:
-    """
-    Data Access Layer (DAL) para gerenciar operações de banco de dados relacionadas a itens.
-    """
 
     def __init__(self, db_name: str = 'itens.db'):
         self.DB_NAME = db_name 
         
     def get_db_connection(self):
-        """Cria e retorna uma conexão com o banco de dados."""
         conn = sqlite3.connect(self.DB_NAME)
         conn.row_factory = sqlite3.Row
         return conn 
     
     def adicionar(self, item: Item): 
-        """Adiciona um objeto Item ao banco de dados."""
         conn = self.get_db_connection()
         cursor = conn.cursor()
         cursor.execute(
@@ -30,7 +25,6 @@ class ItemDAO:
         conn.close()
 
     def listarTodos(self) -> List[Item]:
-        """Busca todos os itens e retorna uma lista de objetos Item."""
         conn = self.get_db_connection()
         cursor = conn.cursor()
         cursor.execute("SELECT * FROM itens ORDER BY quantidade DESC")
